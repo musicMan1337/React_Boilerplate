@@ -3,6 +3,8 @@
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
+
+    //? Setup for path aliasing: import {} from 'src/components'
     "baseUrl": ".",
     "paths": {
       "src/*": ["./src/*"]

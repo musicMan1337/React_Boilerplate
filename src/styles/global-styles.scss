@@ -1,6 +1,11 @@
-@import './css-reset/css_reset.scss';
-@import './mixins/fluid-type';
-@import './variables/font-bank';
+@import 'src/styles/css-reset/css_reset';
+
+@import 'src/styles/variables/colors';
+@import 'src/styles/variables/font-bank';
+
+@import 'src/styles/mixins/fluid-type';
+@import 'src/styles/mixins/scrollbars-buffed';
+@import 'src/styles/mixins/breakpoint';
 
 .sr-only {
   clip: rect(1px, 1px, 1px, 1px);
@@ -26,5 +31,9 @@ code {
 }
 
 body {
+  background-color: $white;
   @include fluid-type(font-size, 320px, 1400px, 18px, 28px);
+  @include scrollbars-buffed(0.5em);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

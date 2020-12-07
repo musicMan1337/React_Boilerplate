@@ -3,12 +3,13 @@
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
-
-    //? Setup for path aliasing: import {} from 'src/components'
     "baseUrl": ".",
     "paths": {
       "src/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "typeAcquisition": {
+    "include": ["jest"]
+  }
 }

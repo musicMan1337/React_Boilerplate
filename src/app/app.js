@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+
+import Example from 'src/components';
 
 const App = () => {
   //? useState hook: [ stateVar, setState-function ] = useState(initial-state)
-  const [hello, setHello] = useState('');
-  const [world, setWorld] = useState('');
+  const [hello, setHello] = React.useState('');
+  const [world, setWorld] = React.useState('');
 
   //? useEffect hook: simulates lifecycle-methods
-  useEffect(() => {
+  React.useEffect(() => {
     const compDidMount = async () => {
       setTimeout(() => {
         setHello('Hello ');
@@ -17,7 +19,7 @@ const App = () => {
   }, []);
   //? [] === componentDidMount
 
-  useEffect(() => {
+  React.useEffect(() => {
     const compDidUpdate = async () => {
       setTimeout(() => {
         setWorld('World!');
@@ -34,6 +36,7 @@ const App = () => {
   return (
     <>
       <h1 className="example">{hello + world}</h1>
+      {world && <Example />}
     </>
   );
 };

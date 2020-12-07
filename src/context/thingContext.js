@@ -1,15 +1,19 @@
 import React from 'react';
 
-export const thingContext = React.createContext(null);
+const ThingContext = React.createContext(null);
 
-const thingProvider = ({ children }) => {
+const ThingProvider = ({ children }) => {
   const value = {};
 
   return (
-    <thingContext.Provider value={value}>
+    <ThingContext.Provider value={value}>
       {children}
-    </thingContext.Provider>
+    </ThingContext.Provider>
   );
 };
 
-export default thingProvider;
+const useThingContext = () => {
+  return React.useContext(ThingContext);
+};
+
+export { ThingProvider, useThingContext };
